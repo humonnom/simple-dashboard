@@ -1,10 +1,11 @@
-import BarCard from '@/app/components/BarCard';
+import LineCard from '@/app/ui/LineCard';
 
 export default function Home() {
   return (
     <div className="flex h-screen mx-auto w-full ">
       <div>
-        <BarCard />
+        {/*<BarCard />*/}
+        <LineCard />
       </div>
     </div>
   );
