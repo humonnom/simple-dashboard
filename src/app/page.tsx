@@ -1,5 +1,6 @@
 import LineCard from '@/app/ui/LineCard';
 import BarCard from '@/app/ui/BarCard';
+import DoughnutChart from '@/app/ui/DoughnutChart';
 
 export default function Home() {
   const LineChartData = {
@@ -53,11 +54,18 @@ export default function Home() {
     mainData: [800, 1600, 900, 1300, 1950, 1700],
     subData: [4900, 2600, 5350, 4800, 5200, 4800],
   };
+
   return (
     <div className="flex h-screen mx-auto w-full ">
       <div>
         <LineCard {...LineChartData} width={389} height={128} />
         <BarCard {...barChartData} width={389} height={128} />
+        <DoughnutChart
+          labels={['United States', 'Italy', 'Other']}
+          data={[35, 30, 35]}
+          width={389}
+          height={260}
+        />
       </div>
     </div>
   );

@@ -53,7 +53,7 @@ const LineCard = ({
             borderWidth: 2,
             borderColor: tailwindTheme.colors.indigo[500],
             fill: true,
-            backgroundColor: (context: any) => {
+            backgroundColor: (context: { chart: Chart }) => {
               const chart = context.chart;
               const { ctx, chartArea } = chart;
               if (chartArea) {

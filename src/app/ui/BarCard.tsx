@@ -36,7 +36,7 @@ function LegendItem({
         onClick={onClick}
       >
         <span
-          className="block w-3 h-3 rounded-full mr-2 border-4"
+          className="block w-3 h-3 rounded-full mr-2 border-[3px]"
           style={{ borderColor: color }}
         />
         <span className="flex items-center">
