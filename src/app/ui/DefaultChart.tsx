@@ -15,5 +15,6 @@ Chart.defaults.plugins.tooltip.padding = 8;
 Chart.defaults.plugins.tooltip.bodyColor = '#4B5563';
 Chart.defaults.plugins.tooltip.backgroundColor = '#FFFFFF';
 Chart.defaults.plugins.tooltip.borderColor = '#E5E7EB';
+Chart.defaults.plugins.tooltip.titleColor = '#1F2937';
 
 export default Chart;
