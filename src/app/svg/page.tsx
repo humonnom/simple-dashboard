@@ -7,9 +7,9 @@ export default function SvgHome() {
         className={
           'rounded text-blue-500 bg-amber-100 px-3 py-1 hover:bg-amber-200'
         }
-        href={'/svg/circle'}
+        href={'/svg/logo'}
       >
-        circle
+        logo
       </Link>
       <Link
         className={
