@@ -26,7 +26,7 @@ const MyLineChart: React.FC<MyLineChartProps> = ({ data, width, height }) => {
   }, '');
 
   return (
-    <svg width={width} height={height}>
+    <svg width={width} height={height} overflow={'visible'}>
       <defs>
         <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="blue" />

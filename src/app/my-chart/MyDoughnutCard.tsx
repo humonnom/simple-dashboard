@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 const DonutChart = ({
   _percentage,
@@ -12,9 +12,6 @@ const DonutChart = ({
   const [percentage, setPercentage] = React.useState(0);
   const circumference = 2 * Math.PI * radius;
 
-  /**
-   * first animation: 0 -> percentage
-   */
   useEffect(() => {
     const timer = setTimeout(() => {
       setPercentage(_percentage);
@@ -44,10 +41,6 @@ const DonutChart = ({
     [percentage, circumference],
   );
 
-  useEffect(() => {
-    console.log(percentage, strokeDashoffset);
-  }, [percentage, strokeDashoffset]);
-
   return (
     <svg
       width={containerSize}
@@ -61,8 +54,48 @@ const DonutChart = ({
         className="transition-all ease-out duration-1000"
         style={{ strokeDashoffset }}
       />
+      <text>
+        <tspan x="50%" y="50%" textAnchor="middle" dy="0.3em" fill={'white'}>
+          {percentage}%
+        </tspan>
+      </text>
     </svg>
   );
 };
 
-export default DonutChart;
+const MyDoughnutCard = () => {
+  const [percentage, setPercentage] = useState(74);
+
+  const handleClick = () => {
+    if (percentage + 10 >= 100) {
+      setPercentage(100);
+    } else if (percentage < 100) {
+      setPercentage(percentage + 10);
+    }
+  };
+
+  return (
+    <>
+      <div
+        className={
+          'flex items-center justify-center bg-blue-500 rounded-[12px] p-6'
+        }
+      >
+        <DonutChart _percentage={percentage} radius={66} strokeWidth={32} />
+      </div>
+      <button
+        className={
+          'px-3 py-1 bg-blue-500 rounded shadow text-white hover:bg-blue-600 transition duration-300 ease-in-out \n' +
+          'active:bg-blue-700 active:shadow-inner active:transform active:translate-y-1.5 \n' +
+          'disabled:bg-gray-400 disabled:cursor-not-allowed'
+        }
+        onClick={handleClick}
+        disabled={percentage === 100}
+      >
+        Increase
+      </button>
+    </>
+  );
+};
+
+export default MyDoughnutCard;
